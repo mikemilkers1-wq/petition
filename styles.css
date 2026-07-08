@@ -1,0 +1,529 @@
+:root {
+  color-scheme: light;
+  --ink: #111315;
+  --muted: #5e666e;
+  --paper: #ffffff;
+  --surface: #ffffff;
+  --line: #d9d9d9;
+  --black: #050505;
+  --red: #f58220;
+  --red-dark: #d96808;
+  --steel: #293038;
+  --green: #16794b;
+  --shadow: 0 18px 50px rgba(12, 15, 18, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.55;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.notice {
+  background: var(--black);
+  color: #f6f6f6;
+  font-size: 0.78rem;
+  line-height: 1.35;
+  padding: 0.45rem 1rem;
+  text-align: center;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 74px;
+  padding: 0.9rem clamp(1rem, 4vw, 3rem);
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(16px);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  text-decoration: none;
+}
+
+.brand-mark {
+  display: inline-grid;
+  place-items: center;
+  min-width: 78px;
+  height: 38px;
+  padding: 0 0.8rem;
+  color: #fff;
+  background: var(--black);
+  border: 2px solid var(--black);
+  border-radius: 6px;
+  font-weight: 900;
+  letter-spacing: 0;
+}
+
+.brand-subline {
+  color: var(--muted);
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.8rem, 2vw, 1.6rem);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.site-nav a {
+  color: var(--steel);
+  text-decoration: none;
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible {
+  color: var(--red);
+}
+
+main {
+  width: min(1180px, calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+.petition-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 360px);
+  gap: clamp(1rem, 2.5vw, 2rem);
+  align-items: start;
+  min-height: calc(100vh - 112px);
+  padding: clamp(1.2rem, 3vw, 2.4rem) 0 clamp(2rem, 4vw, 3rem);
+}
+
+.petition-document,
+.sign-card,
+.stats-panel,
+.thanks-section {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(14, 18, 22, 0.06);
+}
+
+.petition-document {
+  padding: clamp(1.25rem, 3vw, 2.4rem);
+}
+
+.document-label,
+.eyebrow,
+.panel-label {
+  margin: 0 0 0.65rem;
+  color: var(--red);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+h1,
+h2 {
+  margin: 0;
+  line-height: 1.05;
+  letter-spacing: 0;
+}
+
+h1 {
+  max-width: 18ch;
+  overflow-wrap: anywhere;
+  font-size: clamp(2.25rem, 4.2vw, 4.35rem);
+}
+
+h2 {
+  font-size: clamp(1.7rem, 3vw, 2.6rem);
+}
+
+.lead {
+  max-width: 62ch;
+  margin: 1.1rem 0 1.5rem;
+  color: var(--steel);
+  font-size: clamp(1rem, 1.35vw, 1.16rem);
+  font-weight: 700;
+}
+
+.petition-copy {
+  display: grid;
+  gap: 1rem;
+  color: #2b3035;
+}
+
+.petition-copy p {
+  margin: 0;
+}
+
+.petition-copy h2 {
+  margin: 0.8rem 0 -0.35rem;
+  font-size: clamp(1.45rem, 2.4vw, 2rem);
+}
+
+.petition-opening {
+  color: var(--steel);
+  font-size: clamp(1.08rem, 1.5vw, 1.25rem);
+  font-weight: 800;
+}
+
+.sign-card {
+  position: sticky;
+  top: 96px;
+  padding: clamp(1.1rem, 3vw, 1.5rem);
+}
+
+.section-heading {
+  margin-bottom: 1rem;
+}
+
+.section-heading h2 {
+  font-size: clamp(1.55rem, 2.7vw, 2.2rem);
+}
+
+.petition-form {
+  display: grid;
+  gap: 1rem;
+}
+
+.petition-form label {
+  display: grid;
+  gap: 0.45rem;
+  color: var(--steel);
+  font-size: 0.92rem;
+  font-weight: 800;
+}
+
+.petition-form input {
+  width: 100%;
+  min-height: 48px;
+  padding: 0.8rem 0.9rem;
+  color: var(--ink);
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  font: inherit;
+  font-weight: 600;
+}
+
+.petition-form input:focus {
+  border-color: var(--red);
+  outline: 3px solid rgba(245, 130, 32, 0.18);
+}
+
+.sign-button,
+.primary-link,
+.secondary-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0.85rem 1.1rem;
+  border-radius: 6px;
+  font: inherit;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.sign-button,
+.primary-link {
+  color: #fff;
+  background: var(--red);
+  border: 1px solid var(--red);
+}
+
+.sign-button {
+  width: 100%;
+  cursor: pointer;
+}
+
+.sign-button:hover,
+.primary-link:hover {
+  background: var(--red-dark);
+  border-color: var(--red-dark);
+}
+
+.secondary-link {
+  color: var(--ink);
+  background: transparent;
+  border: 1px solid var(--line);
+}
+
+.secondary-link:hover {
+  border-color: var(--ink);
+}
+
+.form-message {
+  min-height: 1.4rem;
+  margin: 0;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.form-message.is-error {
+  color: var(--red-dark);
+}
+
+.form-message.is-success {
+  color: var(--green);
+}
+
+.evidence-band {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.8fr) minmax(0, 1fr);
+  gap: clamp(1rem, 3vw, 2rem);
+  align-items: center;
+  padding: 0 0 clamp(2rem, 5vw, 4rem);
+}
+
+.evidence-band figure {
+  position: relative;
+  min-height: 260px;
+  aspect-ratio: 16 / 9;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.evidence-band figure.image-unavailable {
+  display: grid;
+  place-items: center;
+  background:
+    linear-gradient(135deg, transparent 0 48%, rgba(255, 255, 255, 0.12) 48% 52%, transparent 52%),
+    var(--black);
+}
+
+.evidence-band figure.image-unavailable::after {
+  content: "9×19";
+  color: var(--red);
+  font-size: clamp(2.8rem, 8vw, 6rem);
+  font-weight: 900;
+  line-height: 1;
+}
+
+.evidence-band p:not(.eyebrow) {
+  max-width: 58ch;
+  margin: 1rem 0 0;
+  color: var(--steel);
+  font-size: 1.03rem;
+}
+
+.result-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 390px);
+  gap: 1rem;
+  align-items: start;
+  padding: 0 0 clamp(2.5rem, 6vw, 5rem);
+}
+
+.result-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.result-main {
+  flex: 1;
+  width: min(1180px, calc(100% - 2rem));
+  padding: clamp(2rem, 7vw, 6rem) 0;
+}
+
+.result-main .result-section {
+  padding: 0;
+}
+
+.thanks-section h1 {
+  max-width: 100%;
+  font-size: clamp(2.1rem, 4vw, 3.5rem);
+}
+
+.thanks-section,
+.stats-panel {
+  padding: clamp(1.2rem, 3vw, 1.8rem);
+}
+
+.thanks-section p:not(.eyebrow) {
+  max-width: 62ch;
+  margin: 1rem 0 0;
+  color: var(--steel);
+}
+
+.thanks-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-top: 1.4rem;
+}
+
+.stat-number {
+  color: var(--ink);
+  font-size: clamp(2.8rem, 7vw, 4.8rem);
+  font-weight: 900;
+  line-height: 0.96;
+}
+
+.stat-caption {
+  margin: 0.55rem 0 1.1rem;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.progress-track {
+  width: 100%;
+  height: 12px;
+  overflow: hidden;
+  background: #e5e5e5;
+  border-radius: 999px;
+}
+
+.progress-track span {
+  display: block;
+  width: 0%;
+  height: 100%;
+  background: var(--red);
+  border-radius: inherit;
+  transition: width 240ms ease;
+}
+
+.stat-list {
+  display: grid;
+  gap: 1rem;
+  margin: 1.25rem 0 0;
+}
+
+.stat-list div {
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+}
+
+.stat-list dt {
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.stat-list dd {
+  margin: 0.25rem 0 0;
+  color: var(--steel);
+  font-weight: 800;
+}
+
+.is-hidden {
+  display: none;
+}
+
+.site-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.2rem clamp(1rem, 4vw, 3rem);
+  color: #f2f2f2;
+  background: var(--black);
+}
+
+.site-footer p {
+  margin: 0;
+  font-weight: 800;
+}
+
+.site-footer a {
+  color: #fff;
+  font-weight: 800;
+}
+
+@media (max-width: 860px) {
+  .site-header {
+    position: static;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .site-nav {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .petition-layout,
+  .evidence-band,
+  .result-section {
+    grid-template-columns: 1fr;
+  }
+
+  .petition-layout {
+    min-height: auto;
+  }
+
+  .sign-card {
+    position: static;
+  }
+
+  h1 {
+    max-width: 14ch;
+  }
+}
+
+@media (max-width: 520px) {
+  main {
+    width: min(100% - 1rem, 1180px);
+  }
+
+  .brand {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.45rem;
+  }
+
+  .site-nav {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .evidence-band figure {
+    min-height: 210px;
+  }
+
+  .thanks-actions {
+    flex-direction: column;
+  }
+
+  .primary-link,
+  .secondary-link {
+    width: 100%;
+  }
+
+  .site-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
